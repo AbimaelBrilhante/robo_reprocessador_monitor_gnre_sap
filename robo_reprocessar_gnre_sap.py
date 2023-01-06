@@ -1,6 +1,5 @@
 import pyautogui
 import win32com.client
-import sys
 import subprocess
 import time
 import os
@@ -21,49 +20,23 @@ def saplogin():
         time.sleep(1)
         pyautogui.hotkey('tab')
         time.sleep(1)
-        pyautogui.typewrite("*********")
+        pyautogui.typewrite("Colombia2023")
         time.sleep(1)
         pyautogui.hotkey('enter')
         time.sleep(2)
 
 def reprocessar_monitor() :
-        time.sleep(1)
-        pyautogui.typewrite("zgnre_monitor")
-        time.sleep(1)
-        pyautogui.hotkey('enter')
-        time.sleep(1)
-        pyautogui.hotkey('shift', 'f5')
-        time.sleep(1)
-        pyautogui.hotkey('down')
-        time.sleep(1)
-        pyautogui.hotkey('down')
-        time.sleep(1)
-        pyautogui.hotkey('down')
-        time.sleep(1)
-        pyautogui.hotkey('down')
-        time.sleep(1)
-        pyautogui.hotkey('down')
-        time.sleep(1)
-        pyautogui.hotkey('f2')
-        time.sleep(1)
-        pyautogui.hotkey('f8')
-        time.sleep(15)
-        pyautogui.click(1065, 543)
-        time.sleep(1)
-        pyautogui.hotkey('ctrl', 'a')
-        #pyautogui.click(16, 171)
-        time.sleep(1)
-        pyautogui.hotkey('f8')
-        time.sleep(1)
-        pyautogui.hotkey('enter')
-
-
-try:
-        os.system('wmic process where name="saplogon.EXE" delete')
-        time.sleep(1)
-        saplogin()
         time.sleep(2)
-        reprocessar_monitor()
-except:
-        pass
+        txt = open(r"C:\Users\abimaelsoares\AppData\Roaming\SAP\SAP GUI\Scripts\script.bat", 'r')
+        processo = txt.read().strip()
+        subprocess.Popen(processo)
+
+
+
+os.system('wmic process where name="saplogon.EXE" delete')
+time.sleep(1)
+saplogin()
+time.sleep(2)
+reprocessar_monitor()
+
 
