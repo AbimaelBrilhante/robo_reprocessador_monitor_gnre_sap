@@ -16,7 +16,6 @@ def saplogin():
         time.sleep(2)
         pyautogui.hotkey('enter')
         time.sleep(1)
-        pyautogui.typewrite("*********")
         time.sleep(1)
         pyautogui.hotkey('tab')
         time.sleep(1)
