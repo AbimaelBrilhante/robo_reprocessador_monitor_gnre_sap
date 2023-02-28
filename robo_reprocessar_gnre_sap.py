@@ -20,7 +20,7 @@ def saplogin():
         time.sleep(1)
         pyautogui.hotkey('tab')
         time.sleep(1)
-        pyautogui.typewrite("Colombia2023")
+        pyautogui.typewrite("**********")
         time.sleep(1)
         pyautogui.hotkey('enter')
         time.sleep(2)
